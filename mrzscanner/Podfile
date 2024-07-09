@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'mrzscanner' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for mrzscanner
+
+  target 'mrzscannerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'mrzscannerUITests' do
+    # Pods for testing
+  end
+  pod "DynamsoftCore", "= 2.0.2"
+  pod "DynamsoftLabelRecognizer", '= 2.2.20'
+end
