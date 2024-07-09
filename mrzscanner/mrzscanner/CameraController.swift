@@ -111,7 +111,11 @@ class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBufferDe
         imageData.height = height
         imageData.stride = bpr
         imageData.format = .ARGB_8888
-        imageData.orientation = 90
+        if UIDevice.current.orientation == UIDeviceOrientation.portrait {
+            print("set orientation")
+            imageData.orientation = 90
+        }
+        
         let results = try? recognizer.recognizeBuffer(imageData)
         print("resolution")
         print(width)
