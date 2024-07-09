@@ -18,6 +18,7 @@
 		BEF4FDFA2C3D1AB200A708A1 /* mrzscannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4FDF92C3D1AB200A708A1 /* mrzscannerUITestsLaunchTests.swift */; };
 		BEF4FE072C3D200200A708A1 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4FE062C3D200200A708A1 /* CameraController.swift */; };
 		BEF4FE092C3D207C00A708A1 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4FE082C3D207C00A708A1 /* PreviewView.swift */; };
+		BEF4FE0B2C3D221E00A708A1 /* MRZ in Resources */ = {isa = PBXBuildFile; fileRef = BEF4FE0A2C3D221E00A708A1 /* MRZ */; };
 		F59DEC035F6464E0232B2F11 /* Pods_mrzscannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6903955CA446895E102BC0 /* Pods_mrzscannerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		BEF4FDF92C3D1AB200A708A1 /* mrzscannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mrzscannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BEF4FE062C3D200200A708A1 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		BEF4FE082C3D207C00A708A1 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		BEF4FE0A2C3D221E00A708A1 /* MRZ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MRZ; sourceTree = "<group>"; };
 		D983ECD1907787E8C390F8FF /* Pods-mrzscanner-mrzscannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mrzscanner-mrzscannerUITests.debug.xcconfig"; path = "Target Support Files/Pods-mrzscanner-mrzscannerUITests/Pods-mrzscanner-mrzscannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6903955CA446895E102BC0 /* Pods_mrzscannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mrzscannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1933E7EE94F57888A64085 /* Pods-mrzscanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mrzscanner.release.xcconfig"; path = "Target Support Files/Pods-mrzscanner/Pods-mrzscanner.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		BEF4FDCA2C3D1AB100A708A1 = {
 			isa = PBXGroup;
 			children = (
+				BEF4FE0A2C3D221E00A708A1 /* MRZ */,
 				BEF4FDD52C3D1AB100A708A1 /* mrzscanner */,
 				BEF4FDEC2C3D1AB200A708A1 /* mrzscannerTests */,
 				BEF4FDF62C3D1AB200A708A1 /* mrzscannerUITests */,
@@ -164,7 +167,6 @@
 				295D296D6BFCC42CB50A6AD3 /* Pods-mrzscannerTests.debug.xcconfig */,
 				AE7505ECF396D7032AF105C8 /* Pods-mrzscannerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -277,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF4FE0B2C3D221E00A708A1 /* MRZ in Resources */,
 				BEF4FDE02C3D1AB200A708A1 /* Assets.xcassets in Resources */,
 				BEF4FDE32C3D1AB200A708A1 /* Base in Resources */,
 			);
