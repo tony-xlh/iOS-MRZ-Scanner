@@ -12,6 +12,7 @@ import DynamsoftCore
 import DynamsoftLabelRecognizer
 
 class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, AVCapturePhotoCaptureDelegate {
+    var scannedResults:[String] = []
     var recognizer:DynamsoftLabelRecognizer = DynamsoftLabelRecognizer();
     var previewView: PreviewView!
     var captureSession: AVCaptureSession!
@@ -127,10 +128,42 @@ class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBufferDe
         if results != nil {
             if (results?.count ?? 0 > 0) {
                 if (results?[0].lineResults?.count ?? 0 >= 2) {
-                    returnWithResults(results: results!)
+                    if isSteady(results:results!) {
+                        returnWithResults(results: results!)
+                    }
                 }
             }
         }
+    }
+    
+    func isSteady(results:[iDLRResult]) -> Bool {
+        let str = getMRZString(results: results)
+        if scannedResults.count == 5 {
+            var correctNumber = 0
+            for scannedResult in scannedResults {
+                if str == scannedResult {
+                    correctNumber = correctNumber + 1
+                }
+            }
+            if correctNumber >= 2 {
+                return true
+            }else{
+                scannedResults.remove(at: 0)
+                scannedResults.append(str)
+            }
+        }else{
+            scannedResults.append(str)
+        }
+        return false
+    }
+    
+    func getMRZString(results:[iDLRResult]) -> String{
+        var MRZString = ""
+        for lineResult in results[0].lineResults! {
+            print(lineResult.text!)
+            MRZString = MRZString + lineResult.text! + "\n"
+        }
+        return MRZString
     }
     
     func returnWithResults(results:[iDLRResult]){
