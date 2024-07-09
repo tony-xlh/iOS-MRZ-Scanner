@@ -46,7 +46,7 @@ class ViewController: UIViewController {
             let width: CGFloat = 300
             let height: CGFloat = 100
             let x = view.frame.width/2 - width/2
-            let y = view.frame.height - 300
+            let y = view.frame.height - 200
             label.frame = CGRect.init(x: x, y: y, width: width, height: height)
         }
     }

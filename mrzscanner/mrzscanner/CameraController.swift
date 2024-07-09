@@ -19,6 +19,7 @@ class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBufferDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
         self.previewView = PreviewView()
         self.view.addSubview(self.previewView)
         setupDLRForMRZ()
@@ -112,8 +113,11 @@ class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBufferDe
         imageData.stride = bpr
         imageData.format = .ARGB_8888
         if UIDevice.current.orientation == UIDeviceOrientation.portrait {
-            print("set orientation")
+            print("set orientation to 90")
             imageData.orientation = 90
+        }else if UIDevice.current.orientation == UIDeviceOrientation.landscapeRight {
+            print("set orientation to 180")
+            imageData.orientation = 180
         }
         
         let results = try? recognizer.recognizeBuffer(imageData)
@@ -137,14 +141,23 @@ class CameraController: UIViewController, AVCaptureVideoDataOutputSampleBufferDe
         }
     }
     
+    @objc func rotated() {
+        layoutPreview()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if let previewView = self.previewView {
-            let width: CGFloat = view.frame.width
-            let height: CGFloat = view.frame.height
-            let x: CGFloat = 0.0
-            let y: CGFloat = 0.0
-            previewView.frame = CGRect.init(x: x, y: y, width: width, height: height)
+        layoutPreview()
+    }
+    func layoutPreview(){
+        let bounds = view.bounds
+        self.previewView.frame = bounds
+        if UIDevice.current.orientation == UIDeviceOrientation.portrait {
+            self.previewView.videoPreviewLayer.connection?.videoOrientation = .portrait
+        }else if UIDevice.current.orientation == UIDeviceOrientation.landscapeLeft {
+            self.previewView.videoPreviewLayer.connection?.videoOrientation = .landscapeRight
+        }else if UIDevice.current.orientation == UIDeviceOrientation.landscapeRight {
+            self.previewView.videoPreviewLayer.connection?.videoOrientation = .landscapeLeft
         }
     }
     
