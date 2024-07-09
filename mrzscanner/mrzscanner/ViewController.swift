@@ -39,6 +39,7 @@ class ViewController: UIViewController {
        @objc
        func buttonAction() {
            print("button pressed")
+           self.navigationController?.pushViewController(CameraController(), animated: true)
        }
 
 }

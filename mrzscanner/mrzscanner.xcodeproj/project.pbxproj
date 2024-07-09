@@ -14,6 +14,8 @@
 		BEF4FDEE2C3D1AB200A708A1 /* mrzscannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4FDED2C3D1AB200A708A1 /* mrzscannerTests.swift */; };
 		BEF4FDF82C3D1AB200A708A1 /* mrzscannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4FDF72C3D1AB200A708A1 /* mrzscannerUITests.swift */; };
 		BEF4FDFA2C3D1AB200A708A1 /* mrzscannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4FDF92C3D1AB200A708A1 /* mrzscannerUITestsLaunchTests.swift */; };
+		BEF4FE072C3D200200A708A1 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4FE062C3D200200A708A1 /* CameraController.swift */; };
+		BEF4FE092C3D207C00A708A1 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4FE082C3D207C00A708A1 /* PreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		BEF4FDF32C3D1AB200A708A1 /* mrzscannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mrzscannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF4FDF72C3D1AB200A708A1 /* mrzscannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mrzscannerUITests.swift; sourceTree = "<group>"; };
 		BEF4FDF92C3D1AB200A708A1 /* mrzscannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mrzscannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BEF4FE062C3D200200A708A1 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		BEF4FE082C3D207C00A708A1 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				BEF4FDDF2C3D1AB200A708A1 /* Assets.xcassets */,
 				BEF4FDE12C3D1AB200A708A1 /* LaunchScreen.storyboard */,
 				BEF4FDE42C3D1AB200A708A1 /* Info.plist */,
+				BEF4FE062C3D200200A708A1 /* CameraController.swift */,
+				BEF4FE082C3D207C00A708A1 /* PreviewView.swift */,
 			);
 			path = mrzscanner;
 			sourceTree = "<group>";
@@ -251,6 +257,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF4FE072C3D200200A708A1 /* CameraController.swift in Sources */,
+				BEF4FE092C3D207C00A708A1 /* PreviewView.swift in Sources */,
 				BEF4FDDB2C3D1AB100A708A1 /* ViewController.swift in Sources */,
 				BEF4FDD72C3D1AB100A708A1 /* AppDelegate.swift in Sources */,
 			);
