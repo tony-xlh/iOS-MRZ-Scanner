@@ -2,7 +2,7 @@
 //  mrzscannerTests.swift
 //  mrzscannerTests
 //
-//  Created by 徐力航 on 2024/7/9.
+//  Created by xulihang on 2024/7/9.
 //
 
 import XCTest
