@@ -2,7 +2,11 @@
 
 An iOS MRZ Scanner Demo
 
-https://github.com/xulihang/iOS-MRZ-Scanner/assets/5462205/3962ca9e-0d81-434a-8536-671f230ce75a
+
+
+https://github.com/tony-xlh/iOS-MRZ-Scanner/assets/5462205/d19dc32e-7ce9-43da-972c-a643149e0e61
+
+
 
 It uses AVFoundation to open the camera and then uses [Dynamsoft Label Recognizer](https://www.dynamsoft.com/label-recognition/overview/) to recognize the MRZ on ID cards or passports.
 
