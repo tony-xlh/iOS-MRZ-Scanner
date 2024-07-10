@@ -4,7 +4,7 @@ An iOS MRZ Scanner Demo
 
 
 
-https://github.com/tony-xlh/iOS-MRZ-Scanner/assets/5462205/d19dc32e-7ce9-43da-972c-a643149e0e61
+https://github.com/tony-xlh/iOS-MRZ-Scanner/assets/5462205/61ced183-be26-4978-be06-75b7b69a460b
 
 
 
