@@ -17,4 +17,5 @@ target 'mrzscanner' do
   end
   pod "DynamsoftCore", "= 2.0.2"
   pod "DynamsoftLabelRecognizer", '= 2.2.20'
+  pod 'QKMRZParser'
 end
