@@ -30,6 +30,10 @@ class CameraController: UIViewController, CapturedResultReceiver {
         NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
         configureDCE()
         configureCVR()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         dce.open()
         cvr.startCapturing(templateName)
     }
