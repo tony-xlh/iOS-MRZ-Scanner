@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import DynamsoftLabelRecognizer
+import DynamsoftLicense
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, LicenseVerificationListener  {
@@ -19,29 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LicenseVerificationListen
         let navController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
-        DynamsoftLicenseManager.initLicense("DLS2eyJoYW5kc2hha2VDb2RlIjoiMjAwMDAxLTE2NDk4Mjk3OTI2MzUiLCJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInNlc3Npb25QYXNzd29yZCI6IndTcGR6Vm05WDJrcEQ5YUoifQ==",verificationDelegate:self)
+        LicenseManager.initLicense("DLS2eyJoYW5kc2hha2VDb2RlIjoiMTAwMjI3NzYzLVRYbE5iMkpwYkdWUWNtOXEiLCJtYWluU2VydmVyVVJMIjoiaHR0cHM6Ly9tbHRzLmR5bmFtc29mdC5jb20iLCJvcmdhbml6YXRpb25JRCI6IjEwMDIyNzc2MyIsInN0YW5kYnlTZXJ2ZXJVUkwiOiJodHRwczovL3NsdHMuZHluYW1zb2Z0LmNvbSIsImNoZWNrQ29kZSI6LTM5MDUxMjkwOH0=", verificationDelegate:self)
         return true
     }
     
-    func licenseVerificationCallback(_ isSuccess: Bool, error: Error?) {
-        var msg:String? = ""
-        if isSuccess {
-            print("license valid")
-        }
+    func onLicenseVerified(_ isSuccess: Bool, error: Error?) {
+        print(isSuccess)
         if(error != nil)
         {
-            let err = error as NSError?
-            if err?.code == -1009 {
-                msg = "Dynamsoft Label Recognizer is unable to connect to the public Internet to acquire a license. Please connect your device to the Internet or contact support@dynamsoft.com to acquire an offline license."
-            }else{
-                msg = err!.userInfo[NSUnderlyingErrorKey] as? String
-                if(msg == nil)
-                {
-                    msg = err?.localizedDescription
-                }
+            if let msg = error?.localizedDescription {
+                print("Server license verify failed, error:\(msg)")
             }
-            print(msg ?? "")
         }
-    }
+     }
 }
 

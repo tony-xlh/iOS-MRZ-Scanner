@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import QKMRZParser
-import DynamsoftLabelRecognizer
+import DynamsoftCodeParser
 
 class ViewController: UIViewController {
     var button: UIButton!
     var label: UILabel!
-    static var results:[iDLRResult]!
+    static var result:ParsedResult!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -35,6 +34,7 @@ class ViewController: UIViewController {
         self.view.addSubview(self.button)
         self.view.addSubview(self.label)
     }
+    
     override func viewDidLayoutSubviews() {
        super.viewDidLayoutSubviews()
        if let button = self.button {
@@ -62,28 +62,17 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("did appear")
-        let results = ViewController.results
-        var MRZString = ""
-        if results != nil {
-            var mrzLines:[String] = []
-            for lineResult in results![0].lineResults! {
-                mrzLines.append(lineResult.text!)
-            }
-
-            let mrzParser = QKMRZParser(ocrCorrection: true)
-            let result = mrzParser.parse(mrzLines: mrzLines)
-            print(result)
+        let result = ViewController.result
+        if result != nil {
             var parsed = ""
-            parsed = parsed + "No.: " + result!.documentNumber + "\n"
-            parsed = parsed + "Country.: " + result!.countryCode + "\n"
-            parsed = parsed + "Given names: " + result!.givenNames + "\n"
-            parsed = parsed + "Surname: " + result!.surnames + "\n"
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "d.M.yyyy"
-            parsed = parsed + "Date of birth: " + dateFormatter.string(from: result!.birthdate!) + "\n"
+            parsed = parsed + "No.: " + result!.items![0].parsedFields["passportNumber"]! + "\n"
+            parsed = parsed + "Country.: " + result!.items![0].parsedFields["nationality"]! + "\n"
+            parsed = parsed + "Given names: " + result!.items![0].parsedFields["secondaryIdentifier"]! + "\n"
+            parsed = parsed + "Surname: " + result!.items![0].parsedFields["primaryIdentifier"]! + "\n"
+
+            parsed = parsed + "Date of birth: " + result!.items![0].parsedFields["dateOfBirth"]! + "\n"
             self.label.text = parsed
         }
-        
     }
 }
 

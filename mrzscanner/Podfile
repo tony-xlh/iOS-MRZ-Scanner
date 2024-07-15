@@ -15,7 +15,7 @@ target 'mrzscanner' do
   target 'mrzscannerUITests' do
     # Pods for testing
   end
-  pod "DynamsoftCore", "= 2.0.2"
-  pod "DynamsoftLabelRecognizer", '= 2.2.20'
-  pod 'QKMRZParser'
+  pod 'DynamsoftLabelRecognizerBundle','3.2.3000'
+  pod 'DynamsoftCodeParser','2.2.10'
+  pod 'DynamsoftCodeParserDedicator','1.2.20'
 end
